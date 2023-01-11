@@ -92,5 +92,6 @@ Thumbs.db
 
 # Configs
 ./config.json
+./config.bak
 ./database.sqlite
 
