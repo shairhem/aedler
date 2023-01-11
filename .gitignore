@@ -91,7 +91,7 @@ lerna-debug.log
 Thumbs.db
 
 # Configs
-./config.json
-./config.bak
-./database.sqlite
+config.json
+config.bak
+database.sqlite
 
