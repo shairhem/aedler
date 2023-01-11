@@ -1,4 +1,4 @@
-const { SlashCommandBuilder } = require('discord.js');
+const { SlashCommandBuilder, ActionRowBuilder, ButtonBuilder, ButtonStyle, Events  } = require('discord.js');
 const { afks }  = require('../models/afk.model');
 
 module.exports = {
@@ -8,7 +8,7 @@ module.exports = {
         .addStringOption(option =>
             option.setName('reason')
                 .setDescription('The reason for afk')),
-	async execute(interaction) {
+	async execute(interaction, client) {
         const reason = interaction.options.getString('reason');
         const username = interaction.user.username;
         let message = `${username} afk'ed.`;
@@ -23,6 +23,6 @@ module.exports = {
             time_sent: Date.now()
         });
 
-		await interaction.reply(message);
+		await interaction.reply({ content: message, components: [row] });
 	},
 };
