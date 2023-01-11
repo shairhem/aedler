@@ -12,6 +12,7 @@
   "dependencies": {
     "date-fns": "^2.29.3",
     "discord.js": "^14.7.1",
+    "dotenv": "^16.0.3",
     "sequelize": "^6.28.0",
     "sqlite3": "^5.1.4"
   },

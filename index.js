@@ -2,9 +2,9 @@
 const fs = require('node:fs');
 const path = require('node:path');
 const { Client, Collection, Events, GatewayIntentBits } = require('discord.js');
-const { token } = require('./config.json');
 const { loadDb } = require('./load-db');
 const { createChannel } = require('./create-channel');
+require('dotenv').config();
 
 // Create a new client instance
 const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildPresences, GatewayIntentBits.GuildMembers] });
@@ -18,7 +18,7 @@ client.once(Events.ClientReady, async c => {
 });
 
 // Log in to Discord with your client's token
-client.login(token);
+client.login(process.env.TOKEN);
 
 client.commands = new Collection();
 const commandsPath = path.join(__dirname, 'commands');

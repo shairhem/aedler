@@ -95,3 +95,4 @@ config.json
 config.bak
 database.sqlite
 
+.env
